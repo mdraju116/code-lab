@@ -30,6 +30,13 @@ function findFirstUniqueChar(s: string): string|number  {
         return charArray.filter((item)=>item===char).length===1;
     });;
 
+        //explanation:
+        //let find(char) ==a
+        //so filter((item)=>item=='a') ;    returns ['a', 'a']  
+
+        //.length checks whether a character appears exactly once in the string.
+        //['a', 'a'] .length =2 , so it's not the unique char
+
     return result ?? -1 ;
 
 }
