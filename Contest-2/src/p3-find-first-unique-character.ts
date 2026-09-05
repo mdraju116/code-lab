@@ -27,7 +27,7 @@ function findFirstUniqueChar(s: string): string|number  {
     // console.log(charArray);
 
     const result = charArray.find((char)=>{
-        return charArray.filter((item)=>item==char).length===1;
+        return charArray.filter((item)=>item===char).length===1;
     });;
 
     return result ?? -1 ;
