@@ -1,14 +1,13 @@
 /* 
-Anagram Checker
+✅✅Anagram Checker
 An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, 
 typically using all the original letters exactly once.
 
-
-Given two strings, s1 and s2, determine if they are anagrams of each other.
+➡️Given two strings, s1 and s2, determine if they are anagrams of each other.
 You should consider the strings to be anagrams if they contain the same letters with the same frequency, 
 regardless of case, spaces, or punctuation. Only alphabetic characters should be considered.
 
-Examples
+➡️Examples
 isAnagram("listen", "silent");
 // => true
 
@@ -26,7 +25,7 @@ Example 2
 Input: s1 = "Hello", s2 = "world"
 Output: false
 
-Constraints
+➡️Constraints
 Input strings `s1` and `s2` contain English letters, spaces, and punctuation.
 The length of `s1` and `s2` will be between 0 and 1000 character
 
