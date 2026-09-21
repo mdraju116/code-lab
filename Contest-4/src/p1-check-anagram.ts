@@ -36,7 +36,7 @@ The length of `s1` and `s2` will be between 0 and 1000 character
 
 //my own hint: create a frequency object to store the frequency count
 =>js => const frequency ={}
-=>ts=> const frequency: { [letter: string]: number } = {};  
+=>ts=> const frequency: {  [char: string]: number  } = {};  
 =>i.e=>const frequency: {      [key]     :  value  } = {}
 =>i.e=>const frequency: {      ["a"]     :   1     } = {}
 
@@ -58,7 +58,7 @@ console.log(frequency["l"]); // 2
 //✅✅check frequency of a word
 function checkFrequency(s1: string) {
 
-    const frequency: { [letter: string]: number } = {}
+    const frequency: { [char: string]: number } = {}
 
     for (let char of s1) {
         if (frequency[char]) {
@@ -79,8 +79,8 @@ function isAnagram(s1: string, s2: string): boolean {
     s1 = s1.toLowerCase().replace(/[^a-z]/g, "");
     s2 = s2.toLowerCase().replace(/[^a-z]/g, "");
 
-    const frequency1: { [letter: string]: number } = {};
-    const frequency2: { [letter: string]: number } = {};
+    const frequency1: { [char: string]: number } = {};
+    const frequency2: { [char: string]: number } = {};
 
     for (let char of s1) {
         if (frequency1[char]) {
