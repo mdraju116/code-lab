@@ -47,3 +47,28 @@ function missingNumber(nums: number[]): number {
 
 console.log(missingNumber([3, 0, 1])); // 2
 console.log(missingNumber([0, 1]));    // 2
+
+
+
+
+
+//for missing numbers i.e multiple missing
+function missingNumber2(nums: number[]): number[] {
+
+    const missingNums =[];
+
+    for (let i = 0; i <= nums.length; i++) {
+
+        if(!nums.includes(i)){
+
+            missingNums.push(i)
+
+        }
+
+    }
+
+    return missingNums;
+
+}
+
+console.log(missingNumber2([3, 0,4,6, 1]));//[ 2, 5 ]
