@@ -1,6 +1,7 @@
 /* 
 
 Greatest Common Divisor
+
 Write a function gcd that computes the greatest common divisor (GCD) of two non-negative integers a and b.
 The greatest common divisor is the largest positive integer that divides both numbers without leaving a remainder.
 
@@ -32,4 +33,22 @@ numbers
 loops
 algorithms
 
+Hints
+Hint 1. Look up the Euclidean algorithm: `gcd(a, b) = gcd(b, a % b)`.
+Hint 2. Repeat the remainder step in a loop until the remainder becomes 0.
+
 */
+
+
+function gcd(a: number, b: number): number {
+    while (b !== 0) {
+        const rem = a % b;
+        a = b;
+        b = rem;
+    }
+
+    return a;
+}
+
+console.log(gcd(12, 18));// 6
+console.log(gcd(7, 13));// 1
