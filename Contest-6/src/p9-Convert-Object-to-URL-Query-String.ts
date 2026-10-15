@@ -2,7 +2,6 @@
 
 Convert Object to URL Query String
 
-
 Write a function toQueryString that takes a flat object of key-value pairs (where values are strings or numbers) 
 and converts it into a URL query string.
 
@@ -39,7 +38,24 @@ strings
 transformation
 encoding
 
-
+Hints
+Hint 1. Use Object.entries to iterate over key-value pairs of the object.
+Hint 2. Use encodeURIComponent to safely encode both the key and the value.
+Hint 3. Use Array.prototype.map and Array.prototype.join to format and combine the query parameters.
 
 
 */
+
+function toQueryString(params: Record<string, string | number>): string {
+  return Object.entries(params)
+    .map(([key, value]) => {
+      const encodedKey = encodeURIComponent(key);
+      const encodedValue = encodeURIComponent(String(value));
+
+      return `${encodedKey}=${encodedValue}`;
+    })
+    .join("&");
+}
+console.log(toQueryString({ search: "hello world", page: 1 })); // => "search=hello%20world&page=1"
+console.log(toQueryString({ sort: "asc", limit: 10 })); // => "sort=asc&limit=10"
+console.log(toQueryString({}));// ""
