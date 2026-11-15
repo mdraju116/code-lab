@@ -32,9 +32,6 @@ Hint 2. When using a stack, keep track of indices whose next greater element has
 */
 
 
-
-
-
 function nextGreaterElement(nums: number[]): number[] {
     const result = new Array(nums.length).fill(-1); //if no greater element is found, the answer should remain -1
 
