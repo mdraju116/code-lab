@@ -37,14 +37,46 @@ after skipping either the left or right character.
 
 
 
-
 function isAlmostPalindrome(s: string): boolean {
-  
+
+    let left = 0;
+    let right = s.length - 1;
+
+    // helper function
+    function isPalindrome(left: number, right: number): boolean {
+        while (left < right) {
+            if (s[left] !== s[right]) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    // Compare characters
+    while (left < right) {
+
+        if (s[left] === s[right]) {
+            left++;
+            right--;
+        } else {
+            // Handle the mismatch, Try skipping either character
+            return (
+                isPalindrome(left + 1, right) ||
+                isPalindrome(left, right - 1)
+            );
+
+        }
+    }
 
     return true;
 }
 
 
-
-isAlmostPalindrome("abca"); // true (remove 'c' -> "aba")
-isAlmostPalindrome("abc");  // false
+console.log(isAlmostPalindrome("abca"));
+// true (remove 'c' -> "aba")
+console.log(isAlmostPalindrome("abc"));
+// false
